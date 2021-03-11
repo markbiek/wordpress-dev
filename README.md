@@ -17,4 +17,4 @@ The main difference with this version is that it doesn't delete _any_ data from 
 1. Run `composer require --dev phpunit/phpunit ^7.0` in your plugin directory
    1. (WordPress can't use phpunit >7.4)
 
-Now you're ready to start writing tests!
+Now you're ready to start writing tests! You can run your tests with `./vendor/bin/phpunit` from your plugin directory.
