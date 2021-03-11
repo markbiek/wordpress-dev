@@ -9,12 +9,12 @@ require __DIR__ . '/../vendor/autoload.php';
 /**
  * The path to the WordPress tests checkout.
  */
-define('WP_TESTS_DIR', __DIR__ . '/tests/wordpress-dev/trunk/tests/phpunit');
+define('WP_TESTS_DIR', __DIR__ . '/wordpress-dev/trunk/tests/phpunit');
 
 /**
  * The path to the main file of the plugin to test.
  */
-define('TEST_PLUGIN_FILE', __DIR__ . '/../myplugin.php');
+define('TEST_PLUGIN_FILE', __DIR__ . '/../via-subscription-manager.php');
 
 /**
  * The WordPress tests functions.
