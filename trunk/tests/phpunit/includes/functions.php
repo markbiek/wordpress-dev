@@ -101,52 +101,16 @@ function _test_filter_build_unique_id( $tag, $function, $priority ) {
  * Deletes all data from the database.
  */
 function _delete_all_data() {
-	global $wpdb;
-
-	foreach ( array(
-		$wpdb->posts,
-		$wpdb->postmeta,
-		$wpdb->comments,
-		$wpdb->commentmeta,
-		$wpdb->term_relationships,
-		$wpdb->termmeta,
-	) as $table ) {
-		//phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-		$wpdb->query( "DELETE FROM {$table}" );
-	}
-
-	foreach ( array(
-		$wpdb->terms,
-		$wpdb->term_taxonomy,
-	) as $table ) {
-		//phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-		$wpdb->query( "DELETE FROM {$table} WHERE term_id != 1" );
-	}
-
-	$wpdb->query( "UPDATE {$wpdb->term_taxonomy} SET count = 0" );
-
-	$wpdb->query( "DELETE FROM {$wpdb->users} WHERE ID != 1" );
-	$wpdb->query( "DELETE FROM {$wpdb->usermeta} WHERE user_id != 1" );
+	// NOOP
+	return;
 }
 
 /**
  * Deletes all posts from the database.
  */
 function _delete_all_posts() {
-	global $wpdb;
-
-	$all_posts = $wpdb->get_results( "SELECT ID, post_type from {$wpdb->posts}", ARRAY_A );
-	if ( ! $all_posts ) {
-		return;
-	}
-
-	foreach ( $all_posts as $data ) {
-		if ( 'attachment' === $data['post_type'] ) {
-			wp_delete_attachment( $data['ID'], true );
-		} else {
-			wp_delete_post( $data['ID'], true );
-		}
-	}
+	// NOOP
+	return;
 }
 
 /**
